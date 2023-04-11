@@ -8,7 +8,7 @@
 
 Name:           cuda-sanitizer
 Epoch:          1
-Version:        12.0.140
+Version:        12.1.55
 Release:        1%{?dist}
 Summary:        CUDA Compute Sanitizer API
 License:        CUDA Toolkit
@@ -84,6 +84,9 @@ cp -fr compute-sanitizer/Tree* compute-sanitizer/compute-sanitizer %{buildroot}%
 %{_includedir}/*
 
 %changelog
+* Tue Apr 11 2023 Simone Caronni <negativo17@gmail.com> - 1:12.1.55-1
+- Update to 12.1.55.
+
 * Sat Feb 25 2023 Simone Caronni <negativo17@gmail.com> - 1:12.0.140-1
 - Update to 12.0.140.
 
