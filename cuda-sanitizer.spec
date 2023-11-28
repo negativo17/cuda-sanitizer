@@ -8,7 +8,7 @@
 
 Name:           cuda-sanitizer
 Epoch:          1
-Version:        12.2.140
+Version:        12.3.101
 Release:        1%{?dist}
 Summary:        CUDA Compute Sanitizer API
 License:        CUDA Toolkit
@@ -17,7 +17,7 @@ ExclusiveArch:  x86_64 ppc64le aarch64 %{ix86}
 
 Source0:        https://developer.download.nvidia.com/compute/cuda/redist/%{real_name}/linux-x86_64/%{real_name}-linux-x86_64-%{version}-archive.tar.xz
 Source1:        https://developer.download.nvidia.com/compute/cuda/redist/%{real_name}/linux-ppc64le/%{real_name}-linux-ppc64le-%{version}-archive.tar.xz
-Source2:        https://developer.download.nvidia.com/compute/cuda/redist/%{real_name}/linux-aarch64/%{real_name}-linux-aarch64-%{version}-archive.tar.xz
+Source2:        https://developer.download.nvidia.com/compute/cuda/redist/%{real_name}/linux-sbsa/%{real_name}-linux-sbsa-%{version}-archive.tar.xz
 
 Requires(post): ldconfig
 Conflicts:      %{name}-%{major_package_version} < %{?epoch:%{epoch}:}%{version}-%{release}
@@ -45,7 +45,7 @@ This package provides development files for the CUDA Compute Sanitizer API.
 %endif
 
 %ifarch aarch64
-%setup -q -T -b 2 -n %{real_name}-linux-aarch64-%{version}-archive
+%setup -q -T -b 2 -n %{real_name}-linux-sbsa-%{version}-archive
 %endif
 
 %install
@@ -84,6 +84,9 @@ cp -fr compute-sanitizer/Tree* compute-sanitizer/compute-sanitizer %{buildroot}%
 %{_includedir}/*
 
 %changelog
+* Tue Nov 28 2023 Simone Caronni <negativo17@gmail.com> - 1:12.3.101-1
+- Update to 12.3.101.
+
 * Thu Sep 28 2023 Simone Caronni <negativo17@gmail.com> - 1:12.2.140-1
 - Update to 12.2.140.
 
