@@ -8,8 +8,8 @@
 
 Name:           cuda-sanitizer
 Epoch:          1
-Version:        12.4.99
-Release:        2%{?dist}
+Version:        12.5.81
+Release:        1%{?dist}
 Summary:        CUDA Compute Sanitizer API
 License:        CUDA Toolkit
 URL:            https://developer.nvidia.com/cuda-toolkit
@@ -82,6 +82,9 @@ cp -fr compute-sanitizer/Tree* compute-sanitizer/compute-sanitizer %{buildroot}%
 %{_includedir}/*
 
 %changelog
+* Thu Jul 11 2024 Simone Caronni <negativo17@gmail.com> - 1:12.5.81-1
+- Update to 12.5.81.
+
 * Mon Mar 18 2024 Simone Caronni <negativo17@gmail.com> - 1:12.4.99-2
 - Drop RPATH.
 
